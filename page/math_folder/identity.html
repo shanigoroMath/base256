@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ある恒等式について|BASE256</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!--latex読み込み-->
+    <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" }},
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+        },
+        "HTML-CSS": { matchFontHeight: false },
+        displayAlign: "center",
+        displayIndent: "0em"
+        });
+    </script>
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="../../index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="../../index.html" id="ahome">ホーム</a></li>
+                <li><a href="../math.html" id="amath">数学</a></li>
+                <li><a href="../mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="../p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="../desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="../test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gomath" href="../math.html"></a>
+
+        <div class="paragraph">
+            <h2><div>恒等式 $(\alpha-\beta)^2=(\alpha+\beta)^2-4\alpha\beta$</div></h2>
+            <p>高校生であれば、おそらくこの恒等式は基本対称式から対称式の値を求める問題として、何度も見かけたことがあるはずです。</p>
+            <p>ここでは、この恒等式をより深く探っていこうと思います。</p>
+        </div>
+
+        <div class="paragraph">
+            <h2><div>判別式の導出への応用[和差算]</div></h2>
+
+            <p>
+                $2$次方程式$x^2-px+q=0$ の $2$ 解を $\alpha,\beta$ とすると、解と係数の関係より、<span style="color: aqua;">$\begin{cases}\alpha+\beta=p\\\alpha\beta=q\end{cases}$</span>
+            </p>
+
+            <p>
+                $\therefore [\alpha,\beta がともに実数]$
+                ${\color{red}\Rightarrow}$
+                $(\alpha-\beta)^2\geqq0$
+                $\Leftrightarrow$
+                $(\alpha+\beta)^2-4\alpha\beta\geqq0$
+                <br>
+                $\Leftrightarrow$
+                $p^2-4q\geqq0$
+                $\cdots(\color{yellow}\bigstar)$
+            </p>
+
+            <p>
+                逆に $(\color{yellow}\bigstar)~\Leftrightarrow~(\alpha-\beta)^2\geqq0$より、このとき$\begin{cases}\alpha+\beta=p \\ \alpha-\beta=\sqrt{(正の実数)}\end{cases}$　　　となる正の実数が存在するので、
+            </p>
+
+            <p>
+                <span style="color:aqua;">和差算</span>の要領で [$\alpha,\beta$ がともに実数] を得る。
+            </p>
+
+            <p>
+                つまり、 $(\color{yellow}\bigstar)$ より $p^2-4q$ の正負で解の判別(実数or虚数)が行えることが分かる。
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+            <h2><div>ベクトルの視点</div></h2>
+            <p>
+                ベクトルについても類似の式が成り立つ。
+            </p>
+
+            <p>
+                $\big|\vec{a}+\vec{b}\big|^2-\big|\vec{a}-\vec{b}\big|^2=4\vec{a}\cdot\vec{b}$　すなわち　<span style="color: aqua;">$\vec{a}\cdot\vec{b}=\Big|\frac{\vec{a}+\vec{b}}{2}\Big|^2-\Big|\frac{\vec{a}-\vec{b}}{2}\Big|^2$</span>
+            </p>
+
+            <p>中点や相対位置が固定されているときに有用。</p>
+        </div>
+
+        <div class="paragraph">
+            <h2><div>単位円の媒介変数表示</div></h2>
+
+            <p>
+                ($t$を実数とする)
+            </p>
+
+            <p>
+                恒等式に $\begin{cases}\alpha=1\\ \beta=t^2 \end{cases}$ を代入して整理すると、 $(1-t^2)^2+4t^2=(1+t^2)^2$
+            </p>
+
+            <p>
+                両辺を $(1+t^2)^2$で割って $\begin{cases}x=\frac{1-t^2}{1+t^2}\\y=\frac{2t}{1+t^2}\end{cases}\cdots(\color{limegreen}\clubsuit)$ とすれば、
+            </p>
+
+            <p>
+                <span style="color: aqua;">$x^2+y^2=1$</span> となり、これは単位円を表す。逆に、<span style="text-decoration: underline;">単位円上の全ての点は $(\color{limegreen}\clubsuit)$ の形で表せる</span>ことも示せる(説明は略)。
+            </p>
+        </div>
+
+        <div class="paragraph">
+            <h2><div>ピタゴラス数</div></h2>
+
+            <p>($m,n$を $m>n$ を満たす整数とする)</p>
+
+            <p>
+                恒等式に $\begin{cases}\alpha=m^2\\ \beta=n^2 \end{cases}$ を代入して整理すると、 $(m^2-n^2)^2+(2mn)^2=(m^2+n^2)^2$
+            </p>
+
+            <p>
+                $\begin{cases} a=m^2-n^2\\b=2mn\\c=m^2+n^2 \end{cases}\cdots(\color{aqua}\spadesuit)$ とすれば、 <span style="color: aqua;">$a^2+b^2=c^2$</span> となり、これらはピタゴラス数の組であることが分かる。
+            </p>
+
+            <p>(例 : $m=2,n=1$のとき、$3^2+4^2=5^2$を得る)</p>
+
+            <p><span style="text-decoration: underline;">全ての原始ピタゴラス数は互いに素な$m,n$ を用いて $(\color{aqua}\spadesuit)$ の形で表せる</span>ことも示せる。(説明略)</p>
+
+        </div>
+
+        <p style="border-top: 1px solid #FFF;font-size: 0.8em;">BF恒等式とかも同じノリでまとめられたらとおもいます。</p>
+
+        <a class="gomath" href="../math.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>

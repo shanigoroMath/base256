@@ -1,0 +1,820 @@
+/*------------------事前ロード--------------------*/
+
+@font-face {
+    font-family: 'ryusenkei';
+    src: url(../font/02Ryusenkei-Regular.ttf);
+}
+
+
+
+/*------------------全ページ一律------------------*/
+
+html{
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    scroll-behavior: smooth;
+}
+
+/*親要素内の子要素の配置指定。要注意*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: #000;
+}
+
+p, li, td{
+    line-height: 1.7;
+}
+
+a:link{
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+a:visited{
+    text-decoration: none;
+    color: fuchsia;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:active{
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+
+
+/*------------------ヘッダ一律--------------------*/
+
+header:not(:has(.td)){
+    font-family: ryusenkei, sans-serif;
+    padding-top: 0px;
+    animation: bgchange 70s infinite;
+    background-size: cover;
+    background-position: 50% -30px;
+}
+
+/*背景変化*/
+@keyframes bgchange{
+    
+    0% { background-image: url(../image/daisangen.png); }
+    10% { background-image: url(../image/zetamap.png); }
+    20% { background-image: url(../image/jmoyoru.jpg); }
+    30% { background-image: url(../image/gate.png); }
+    40% { background-image: url(../image/gauss.png); }
+    50% { background-image: url(../image/kazoe1.jpg); }
+    60% { background-image: url(../image/gatesheet.JPG); }
+    70% { background-image: url(../image/newton.png); }
+    80% { background-image: url(../image/takorice.JPG); }
+    90% { background-image: url(../image/tu-i-so-.jpg); }
+    100% { background-image: url(../image/daisangen.png); }
+}
+
+/*ロゴ*/
+.logo{
+    text-align: center;
+    height: 120px;
+    background-color: #0000009f;
+}
+
+.logo a:link, .logo a:active, .logo a:visited{
+    text-decoration: none;
+    font-size: 2px;
+    transition: 0.8s;
+}
+
+.logo a:hover{
+    text-decoration: none;
+    font-size: 2.1px;
+    transition: 0.3s;
+}
+
+/*ロゴ文字*/
+#logo1{
+    font-size: 50em;
+    color: aqua;
+}
+#logo2{
+    font-size: 45em;
+    color: aqua;
+}
+#logo3{
+    font-size: 40em;
+    color: aqua;
+}
+#logo4{
+    font-size: 40em;
+    color: aqua;
+}
+#logo5{
+    font-size: 45em;
+    color: rgb(0, 250, 83);
+}
+#logo6{
+    font-size: 50em;
+    color: rgb(0, 250, 83);
+}
+#logo7{
+    font-size: 55em;
+    color: rgb(0, 250, 83);
+}
+
+@media(max-width: 767px){
+    .logo a:link, .logo a:active, .logo a:visited{
+        text-decoration: none;
+        font-size: 1.4px;
+        transition: 0.8s;
+    }
+    .logo a:hover{
+        text-decoration: none;
+        font-size: 1.5px;
+        transition: 0.3s;
+    }
+    .logo{
+        height: 100px;
+    }
+}
+
+/*ナビ(liではなくaに背景設定などを適用)*/
+nav:not(.td) ul{
+    margin: 0 0 0 0;
+    padding: 14px;
+    list-style-type: none;
+    gap: 30px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(148, 148, 148);
+    border-top: 2px solid rgb(91, 91, 91);
+    border-bottom: 2px solid rgb(91, 91, 91);
+}
+
+nav:not(.td) a{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(36, 36, 36);
+    font-weight: bold;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+
+nav:not(.td) a:hover, nav a:active, nav a:link, nav a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+nav:not(.td) a:hover, nav a:active{
+    background-color: rgb(71, 108, 255);
+    transition: 0.5s;
+}
+
+#ahome::before{
+    content: '🏠 ';
+}
+#amath::before{
+    content: '∰ ';
+}
+#amahjong::before{
+    content: '🀄 ';
+}
+#ap5::before{
+    color: #ff3f3f;
+    content: '＊ ';
+}
+#afunc::before{
+    content: '💻';
+}
+#acss::before{
+    content: '🔳';
+}
+
+
+/*------------------メイン一律--------------------*/
+
+main{
+    margin: 40px 0;
+    padding: 0 4%;
+}
+
+main h2{
+    font-family: ryusenkei, sans-serif;
+    border-bottom: 2px solid aquamarine;
+    border-left: 2px solid aquamarine;
+    padding: 5px 5px 10px 5px;
+    color: aquamarine;
+    line-height: 1.6rem;
+    font-size: 1.3rem;
+}
+
+main h2 div{
+    transition: .5s;
+}
+
+main h2 div::before{
+    content: '> ';
+}
+
+main h2 div:hover{
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+}
+
+main h3{
+    color: aquamarine;
+    border-bottom: 2px solid aquamarine;
+}
+
+main h3::before{
+    content: '▶';
+}
+
+main .paragraph{
+    margin: 40px 0;
+    padding-left: 8px;
+    border-left: 2px solid aquamarine;
+}
+
+/*トグルボタン*/
+.toggle_input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.toggle_label {
+    width: 75px;
+    height: 35px;
+    background: #ccc;
+    position: relative;
+    display: inline-block;
+    border-radius: 40px;
+    transition: 0.4s;
+    box-sizing: border-box;
+}
+
+.toggle_label:after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: 0.4s;
+}
+
+.toggle_input:checked + .toggle_label {
+    background-color: #4BD865;
+}
+
+.toggle_input:checked + .toggle_label:after {
+    left: 40px;
+}
+
+.toggle_button {
+    position: relative;
+    width: 75px;
+    height: 35px;
+    margin: auto;
+}
+
+/*iframe*/
+
+iframe {
+    max-width: 100%;
+}
+
+
+/*------------------フッタ一律--------------------*/
+
+/*上部に戻る*/
+.gotop{
+    font-family: ryusenkei, sans-serif;
+    text-align: center;
+}
+
+/*権利表示*/
+.copyright{
+    font-family: ryusenkei, sans-serif;
+    margin: 20px 0 0 0;
+    padding: 40px 0 40px 0;
+    background-color: rgb(88, 88, 88);
+    text-align: center;
+}
+
+
+
+/*------------------index固有--------------------*/
+
+/*linktableをuts_mathで拝借してます*/
+.linktable{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.linktable th, .linktable td{
+    border: 2px solid #FFFFFF;
+    padding: 10px;
+    word-break: break-all;
+}
+
+.linktable th{
+    width: 200px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.linktable td{
+    font-size: 0.7rem;
+}
+
+
+
+/*------------------mahjong固有------------------*/
+
+#mahjong{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#mahjong img{
+    max-width: 100%;
+}
+
+#haipairule{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#haipairule img{
+    max-width: 100%;
+}
+
+#mahjong div div{
+    font-size: 0.6em;
+}
+
+/*モバイル*/
+@media(max-width: 767px){
+    #mahjong{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 425px){
+    #mahjong{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/*------------------desmos固有-------------------*/
+
+#graphs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#graphs div iframe{
+    width: 100%;
+    height: 300px;
+    border: 1px solid white;
+}
+
+/*モバイル*/
+@media(max-width: 767px){
+    #graphs{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 425px){
+    #graphs{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/*------------------test固有---------------------*/
+
+#tips p{
+    border-bottom: 1px solid #FFF;
+}
+
+#boldletter{
+    font-weight: bold;
+}
+
+.animationBox{
+    width: 100px;
+    height: 100px;
+    background: #FFF;
+    animation: rotation 9s ease 0s infinite normal none;
+}
+
+@keyframes rotation{
+    0%{
+        transform: scale(1);
+    }
+    10%{
+        transform: scale(.6) rotate(-45deg) translate(100px,100px);
+    }
+    20%{
+        transform: scale(.1) rotate(1000deg);
+    }
+}
+
+.cssbox{
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    animation: coloring 0.3s infinite;
+    border-radius: 5px;
+    width: 140px;
+    height: 62px;
+}
+
+.cssbox div{
+    padding-left: 60px;
+    padding-top: 7px;
+    white-space: nowrap;
+}
+
+@keyframes coloring{
+    0%{background: linear-gradient(90deg,#ff3f3f 0%,#ffea00 50%,#00ffdd 100%);}
+    25%{background: linear-gradient(90deg,#ff3fe2 0%,#ff3f3f 50%,#ffea00 100%);}
+    50%{background: linear-gradient(90deg,#00ffdd 0%,#ff3fe2 50%,#ff3f3f 100%);}
+    75%{background: linear-gradient(90deg,#ffea00 0%,#00ffdd 50%,#ff3fe2 100%);}
+    100%{background: linear-gradient(90deg,#ff3f3f 0%,#ffea00 50%,#00ffdd 100%);}
+}
+
+
+
+/*------------------math系統固有---------------------*/
+
+.articles p::before{
+    content: '・';
+}
+
+.proof{
+    color: rgb(255, 255, 255);
+    background-color: #194340; 
+    text-align: center;
+}
+
+.gomath::before{
+    color: #ffffff;
+    background-color: #002b28;
+    content: "[数学]へ戻る";
+    border: 2px solid #194340;
+    padding: 5px;
+}
+
+.whitebox{
+    border: 1px solid #FFF;
+    padding: 1em; 
+    line-height: 1.8em;
+}
+
+.minitext{
+    font-size: 0.8rem;
+}
+
+
+
+/*------------------東大理系数学---------------------*/
+
+#pthead td{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    background-color: #0e0067;
+}
+
+.problemtable-container{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.problemtable{
+    border-collapse: collapse;
+    width: max-content;
+}
+
+
+
+
+
+.problemtable a:not(:has(img.fi)) img {
+  opacity: 0.7;
+  /*filter: grayscale(100%);*//*グレースケール化*/
+}
+
+.problemtable a:not(:has(img.fi)) {
+  position: relative;
+}
+
+.problemtable a:not(:has(img.fi))::after {
+  content: "この記事は現在執筆中です";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 0.75em;
+  padding: 4px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.problemtable a:not(:has(img.fi)):hover::after {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+.problemtable th, .problemtable td{
+    border: 2px solid #FFFFFF;
+    padding: 10px;
+    word-break: break-all;
+}
+
+.problemtable th{
+    width: 200px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.problemtable td{
+    width: 120px;
+    height: 95px;
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.problemtable td img{
+    width: 100px;
+    transition: 0.2s;
+}
+
+
+.problemtable td img:hover{
+    width: 110px;
+    transition: 0.2s;
+}
+
+/*------------------東大理系数学 ラベル用---------------------*/
+.problemtable td {
+  position: relative; /* ラベルをセル右下に固定するため */
+}
+
+/* 共通ラベル */
+.diff-label {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  padding: 1px 4px;
+  border-radius: 2px;
+  pointer-events: none; /* クリックを妨げない */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.6); /* デフォルト色（上書き可能） */
+}
+
+/* 色分け（必要ならON/OFFして使ってください） */
+.diff-A { background: rgba(46, 204, 113, 0.85); }   /* 緑 (A) */
+.diff-B { background: rgba(52, 152, 219, 0.85); }   /* 青 (B) */
+.diff-C { background: rgba(241, 196, 15, 0.85); }   /* 黄 (C) */
+.diff-D { background: rgba(231, 76, 60, 0.85); }    /* 赤 (D) */
+
+/* アスタリスク付きの小さな処理（C* など） */
+.diff-star {
+  padding-right: 8px; /* '*'表示を少し余裕持たせる */
+}
+.diff-label .star {
+  margin-left: 4px;
+  font-size: 0.7em;
+  opacity: 0.95;
+  vertical-align: super;
+}
+
+
+
+
+.gouts::before{
+    color: #ffffff;
+    background-color: #002b28;
+    content: "◀ 一覧に戻る";
+    border: 2px solid #194340;
+    padding: 5px;
+}
+
+/* チェックボックスは非表示にする */
+.toggle-box input {
+  display: none;
+}
+
+/* ラベル（見出し） */
+.toggle-label {
+  font-size: 0.8em;
+  display: block;
+  background: rgb(0, 87, 58);
+  padding: 6px;
+  cursor: pointer;
+  border: 1px solid #606060;
+  user-select: none;
+}
+
+/* 中身（最初は非表示） */
+.toggle-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #aaaaaa;
+  padding: 0 10px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  color: black;
+}
+
+/* チェックが入ったら中身を表示 */
+.toggle-box input:checked ~ .toggle-content {
+  max-height: 200px; /* 十分大きい値にしておく */
+  padding: 10px;
+}
+
+.emphbox {
+    border: 2px solid #FFF;
+    border-radius: 6px;
+    padding: 1em;
+    background-color: #191c43;
+    font-size: 0.85em;
+}
+
+.emphbox img{
+    max-width: 100%;
+    height: auto;
+}
+
+.problist {
+    display: grid;
+    gap: 10px;                    /* ブロック同士の間隔 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding: 10px;
+    background-color: rgb(40, 0, 0);
+    border-radius: 5px;
+    box-sizing: border-box;       /* これ重要 */
+}
+
+/* スマホ幅はもっと下限を下げる */
+@media (max-width: 480px) {
+    .problist {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+}
+
+.problist > .autof {
+    max-width: 100%;
+    font-size: 0.85em;
+    background: rgba(119, 70, 70, 0.26); /* 見やすくするための例。不要なら外してOK */
+    padding: 10px;
+    border-radius: 6px;
+}
+
+
+/* ===============================
+   右サイドナビ（共通）
+================================ */
+
+#side-toggle {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1000;
+  font-size: 20px;
+  padding: 8px 12px;
+  background: #002b28;
+  color: #fff;
+  border: 2px solid aquamarine;
+  cursor: pointer;
+  display: none;
+}
+
+#side-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  background: #0a0a0a;
+  border-left: 2px solid aquamarine;
+  padding: 12px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+#side-nav.open {
+  transform: translateX(0);
+}
+
+#side-close {
+  background: none;
+  border: none;
+  color: aquamarine;
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+#side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#side-nav li {
+  margin-bottom: 8px;
+}
+
+#side-nav a {
+  color: #aaa;
+  font-size: 0.9rem;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+#side-nav a.active {
+  color: aquamarine;
+  font-weight: bold;
+}
+
+/* ===== PC表示（常時表示） ===== */
+@media (min-width: 1000px) {
+  #side-toggle {
+    display: none;
+  }
+
+  #side-nav {
+    transform: translateX(0);
+  }
+
+  main {
+    margin-right: 280px;
+  }
+}
+
+/* ===== モバイル表示 ===== */
+@media (max-width: 999px) {
+  #side-toggle {
+    display: block;
+  }
+}
+
+/* ===== 問題番号バッジ ===== */
+#problem-badge {
+  color: aquamarine;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid aquamarine;
+  display: none;
+}

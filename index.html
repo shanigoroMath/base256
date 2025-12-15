@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BASE256</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="index.html" id="ahome">ホーム</a></li>
+                <li><a href="page/math.html" id="amath">数学</a></li>
+                <li><a href="page/mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="page/p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="page/desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="page/test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+
+
+        <!--各divのidはつけただけで使ってない-->
+
+
+        <!--ABOUT-->
+        <div id="about" class="paragraph">
+            <h2><div>About</div></h2>
+
+            <p>こんにちは！ こちらのサイトは私、しゃにごろ(NABLA_DEL)がHTML,CSS,JS等々の練習をするために作りました。まだまだ初心者です故ミスが多々あると思いますがご容赦ください😖</p>
+
+            <p style="font-size: 0.6em;">※制作の参考にさせていただいた文献:「スラスラわかるHTML&CSSのきほん」(<a href="https://studio947.net/" target="_blank">studio947</a>さん著)</p>
+        </div>
+
+        <!--MY stats-->
+        <div id="stats" class="paragraph">
+            <h2><div>My stats</div></h2>
+
+            <p>高校生です。科学分野のものは大体好物で、特に数学＆物理にハマっています。</p>
+
+            <p>ハンドルネームはハッシュ関数のSHA256からつけました。 <span style="font-size: 0.5em;">(SHA256自体については全く知らないけど...)</span>　そしてこのサイトのタイトルは、しゃにごろの基地(sha256's base)と、256進数(base256)の両方にちなんでいます。</p>
+
+            <p></p>
+        </div>
+
+        <!--Links-->
+        <div id="links" class="paragraph">
+            <h2><div>Links</div></h2>
+
+            <table class="linktable">
+                <tr>
+                    <th>Twitter<br><span style="font-size: 0.5em;">数学関連の情報を投稿中</span></th>
+                    <td><a href="https://x.com/NABLA_DEL">https://x.com/NABLA_DEL</a></td>
+                </tr>
+                <tr>
+                    <th>ポロロッカ<br><span style="font-size: 0.5em;">時々作問しています</span></th>
+                    <td><a href="https://pororocca.com/user/4763/">https://pororocca.com/user/4763/</a></td>
+                </tr>
+                <tr>
+                    <th>OMC<br><span style="font-size: 0.5em;">~Road to 青solver~</span></th>
+                    <td><a href="https://onlinemathcontest.com/users/sha256">https://onlinemathcontest.com/users/sha256</a></td>
+                </tr>
+                <tr>
+                    <th>mathlog<br><span style="font-size: 0.5em;">ほぼ見る専です...</span></th>
+                    <td><a href="https://mathlog.info/users/cvpYNqYNOpUpQbceFUwP7588RXI2">https://mathlog.info/users/cvpYNqYNOpUpQbceFUwP7588RXI2</a></td>
+                </tr>
+                <tr>
+                    <th>マシュマロ<br><span style="font-size: 0.5em;">質問受け付けてます</span></th>
+                    <td><a href="https://marshmallow-qa.com/fkbwcvelpyznlnu?t=2dXf4T&utm_medium=url_text&utm_source=promotion">https://marshmallow-qa.com/fkbwcvelpyznlnu?t=nBAX9A&utm_medium=twitter&utm_source=promotion</a></td>
+                </tr>
+                <tr>
+                    <th>GitHub<br><span style="font-size: 0.5em;">一応書いてみただけ...</span></th>
+                    <td><a href="https://github.com/shanigoroMath">https://github.com/shanigoroMath</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <p style="font-size: 0.6em;">フォントはフロップデザインさんの「流線型　フリーフォント」を使わせていただきました。</p>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025年東大理系数学第3問を徹底解剖！|東大理系数学の解剖|BASE256</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+</head>
+
+
+<body data-problem="2025-3" id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../uts_math.html"></a>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2025-3</div></h2>
+
+            <div class="emphbox">
+                <p>平行四辺形$ABCD$において, $\angle ABC=\frac{\pi}{6}, \ AB=a, \ BC=b, \ a\leqq b$ とする。次の条件を満たす長方形$EFGH$を考え、その面積を$S$とする。</p>
+                <p>　　条件：点$A,B,C,D$はそれぞれ辺$EF,FG,GH,HE$上にある。</p>
+                <p>ただし、辺はその両端の点も含むものとする。</p>
+                <p>(1)$\angle BCG=\theta$とするとき、$S$を$a,b,\theta$を用いて表せ。</p>
+                <p>(2)$S$の取り得る値の最大値を$a,b$を用いて表せ。</p>
+            </div>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>方針、略解</div></h2>
+
+            <p>(1)角度追跡ののち、底辺×高さ。答えの形は結構人によりばらけそう。
+                <div class="toggle-box">
+                    <input type="checkbox" id="2025-3-1">
+                    <label for="2025-3-1"
+                    class="toggle-label">▶ 答え</label>
+                    <div class="toggle-content">   
+                        $$\frac12ab+\frac{a^2}{2}\sin\big(2\theta+\frac23\pi)+\frac{b^2}{2}\sin2\theta$$
+                    </div>
+                </div>
+            </p>
+
+            <p>(2)三角関数の合成。簡単に計算する方法を後述します。
+                <div class="toggle-box">
+                    <input type="checkbox" id="2025-3-2">
+                    <label for="2025-3-2"
+                    class="toggle-label">▶ 答え</label>
+                    <div class="toggle-content">   
+                        $$
+                        \begin{cases}
+                        \frac12\sqrt{a^4-a^2b^2+b^4}+\frac{ab}{2} \quad (a\leqq b\leqq\sqrt2aのとき)\\
+                        \frac{\sqrt3}{4}b^2+\frac{ab}{2}\quad (b\geqq \sqrt2aのとき)
+                        \end{cases}
+                        $$
+                    </div>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>動く図解</div></h2>
+
+            <iframe src="https://www.desmos.com/calculator/z1segv54d8?embed" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>問題の背景</div></h2>
+
+            <p>(2)はベクトルの内積を利用すると明快な解答が作れます。以下では少し丁寧に清書したものを掲載します。</p>
+
+            <div class="emphbox">
+                <p>加法定理等を用いると、$S=\frac{\sqrt3}{4}a^2\cos2\theta+\frac{2b^2-a^2}{4}\sin2\theta+\frac{ab}{2}$と変形できる。</p>
+                <p>この式は、1,2項目を内積と見なすことにより、次のように変形できる。</p>
+
+                <p>$$S \ = \ \frac14\Bigg\{\underline{\begin{pmatrix}\sqrt3a^2\\2b^2-a^2\end{pmatrix}}_{(これを\overrightarrow{OX}とする)}\cdot\underline{\begin{pmatrix}\cos2\theta\\ \sin2\theta\end{pmatrix}}_{(これを\overrightarrow{e}とする)}\Bigg\}+\frac{ab}{2} \ = \ \frac14(\overrightarrow{OX}の\overrightarrow{e}への正射影の符号付き長さ)+\frac{ab}{2}$$</p>
+
+                <p>ここで、$0\leqq2\theta\leqq\frac{\pi}{3}$より、$P(\overrightarrow{e})$は単位円上の第一象限内の$y\leqq\sqrt3x$の部分を動く。また、$(\overrightarrow{OX}の傾き)=\frac{2b^2-a^2}{\sqrt3a^2}\geqq\frac{1}{\sqrt3}(\because a\leqq b)$より、$X$は第一象限の$y\geqq\frac{1}{\sqrt3}x$の部分を動く。</p>
+                <p>よって、$X$が直線$l:y=\sqrt3x$の上下どちら側にあるかで場合分けが生じる。(図を参照)</p>
+
+                <img src="figure/スクリーンショット 2025-11-30 215128.png" width="230px">
+
+                <p>(i)$X$が$l$の下側または$l$上にあるとき、当然$\overrightarrow{OP} /\!/ \overrightarrow{OX}$で$S$の最大値が達成される。
+                このときの$S$を$S_{\max}$とすると、$S_{\max}=\frac14|\overrightarrow{OP}|+\frac{ab}{2}=\frac12\sqrt{a^4-a^2b^2+b^4}+\frac{ab}{2}.$
+                なお、$X$が$l$の下側にある条件は、$(\overrightarrow{OX}の傾き)\leqq \sqrt3$より計算すると、$b\leqq \sqrt2a$である。</p>
+
+                <p>(ii)$X$が$l$の上側または$l$上にあるとき、$\overrightarrow{OP}=\begin{pmatrix}\frac12\\\frac{\sqrt3}{2}\end{pmatrix}$で最大値となる。
+                よってこのときの最大値を計算すると、$S_{\max}=\frac{\sqrt3}{4}b^2+\frac{ab}{2}.$
+                $X$が$l$の上側にある条件は、$b\geqq\sqrt2a$である。</p>
+
+                <p>以上より、
+                    $$
+                        S_{\max}=\begin{cases}
+                        \frac12\sqrt{a^4-a^2b^2+b^4}+\frac{ab}{2} \quad (a\leqq b\leqq\sqrt2aのとき)\\
+                        \frac{\sqrt3}{4}b^2+\frac{ab}{2}\quad (b\geqq \sqrt2aのとき)
+                        \end{cases}
+                    $$
+                </p>
+            </div>
+
+            <p>三角関数の線形結合を内積と見なすのがミソです。淡々とした計算とは打って変わって図形的な解き方をすることができ、比較的ミスが起こりにくいです。</p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>類題紹介</div></h2>
+
+            <div class="emphbox" >
+                <p>辺の長さが 1 および $a$ の長方形 $ABCD$ と、これに図のように外接している正三角形 $PQR$ がある（長方形の辺が三角形の辺上にある場合も含む）。 $\angle BAQ = \theta$ とおく。ただし、 $\frac{\pi}{6} \le \theta \le \frac{\pi}{3}$とする。</p>
+
+                <img src="figure/スクリーンショット 2025-12-02 224810.png" width="250px">
+
+                <p>(1) 正三角形の 1 辺の長さ $y$ を求めよ。</p>
+
+                <p>(2) $y$ の最大値および最小値を求めよ。</p>
+                （出典不明、入試問題）
+            </div>
+            
+            <br>
+
+            <div class="emphbox" >
+                $a, b$ を実数とし，$c > 0$ とするとき，関数<br>
+$f(\theta) = a\sin^{2}\theta + b\cos^{2}\theta + c\sin\theta\cos\theta$<br>
+$(0 \le \theta \le \frac{\pi}{2})$<br>
+を考える。$f(\theta)$ の最大値を $M$，最小値を $m$ とし，$f(\theta)$ が最大値 $M$ をとるときの<br>
+$\theta$ を $\theta_{0}$ とする。次の問いに答えよ。<br>
+<br>
+(1)$a=b$のとき、 $\theta_0$ の値を求めよ。<br>
+<br>
+(2) $a > b$ かつ$M-m=c$であるとする。$c$ を$a,b$を用いて表し、$\sin\theta_0$の値を求めよ。<br>
+<br>
+(4) $a < b$ かつ$M-m=c$であるとする。$\sin\theta_0$の値を求めよ。<br>
+<br>
+
+                （早慶模試）
+            </div>
+            
+            <br>
+
+            <div class="emphbox">
+                <p>$a$を正の実数とするとき，次の問いに答えよ。</p>
+
+                <p>(1)辺の長さが 1,他の 2 辺のうち 1 辺の長さが $a$ である三角形のなかで，
+                面積が最大である三角形の残りの 1 辺の長さを $a$ を用いて表せ。</p>
+
+                <p>(2)辺の長さが 1,他の 2 辺のうち 1 辺の長さが $a$ である四角形のなかで，
+                面積が最大である四角形の残りの 1 辺の長さを $a$ を用いて表せ。</p>
+            
+                （出典不明、医学部の入試問題）
+            </div>
+            
+            <br>
+
+            <div class="emphbox">
+                <p>平面上に四角形ABCDがあり、$AB = a,\quad BC = b,\quad \angle A = \theta$とする。<br>条件$\angle A = \angle B = \angle C,\qquad \frac{\pi}{3} < \theta < \frac{\pi}{2},\qquad b < a < \frac{b}{2\cos\theta}$のもとで、以下の問に答えよ。</p>
+
+                <p>(1)$CD=c$を$a,b,\theta$を用いて表せ。</p>
+
+                <p>(2)$ a, b $ を固定して，$\theta$ が $\frac{\pi}{3} < \theta < \frac{\pi}{2}$ を動くときの$ c $ の最小値を求めよ。</p>
+            
+                （出典不明、入試問題）
+            </div>
+
+        </div>
+
+        <a class="gouts" href="../uts_math.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+  document.getElementById("side-toggle").onclick = () =>
+    document.getElementById("side-nav").classList.add("open");
+
+  document.getElementById("side-close").onclick = () =>
+    document.getElementById("side-nav").classList.remove("open");
+});
+</script>
+
+</body>
+
+
+</html>

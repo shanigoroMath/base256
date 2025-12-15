@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2024年東大理系数学第2問を徹底解剖！|東大理系数学の解剖|BASE256</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+</head>
+
+
+<body data-problem="2024-2" id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../uts_math.html"></a>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2024-2</div></h2>
+
+            <div class="emphbox">
+                <p></p>
+            </div>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>方針、略解</div></h2>
+
+            <p>(1)
+                <div class="toggle-box">
+                    <input type="checkbox" id="2025--">
+                    <label for="2025--"
+                    class="toggle-label">▶ 答え</label>
+                    <div class="toggle-content">   
+                        $$$$
+                    </div>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>動く図解</div></h2>
+
+            <iframe src="" width="400px" height="400px" style="border: 1px solid #ccc" frameborder=0></iframe>
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>問題の背景</div></h2>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>類題紹介</div></h2>
+
+            <p>積分形で表された関数の問題を集めました。</p>
+
+            <div class="emphbox" style="text-align: center;">$0\leqq z\leqq1$における、$\displaystyle{f(z)=\int_0^z\sqrt{x^4+(z-z^2)^2}dx}$の最大値を求めよ。　　（パトナム数学コン1991）</div>
+            <br>
+
+            
+            <div class="emphbox">
+                ・ $a, b$ を正の実数とし，$a>1$ とする。定義域を $x\ge 0$ とする連続関数 $f(x), g(x), h(x)$ が<br>
+次の 3 つの等式を満たしているとする。<br>
+<br>
+$$f(x)=a\exp(-h(x))$$
+$$g(x)=b\exp\left(\int_{0}^{x}(f(y)-1)\,dy\right)$$
+$$h(x)=\int_{0}^{x}g(y)\,dy$$
+ただし，$\exp(x)=e^{x}$ とする。このとき，$g(x)$ の最大値を求めよ。<br>
+<br>
+（京大特色2026）<br>
+            </div>
+            <br>
+
+
+
+
+
+        </div>
+
+        <a class="gouts" href="../uts_math.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+  document.getElementById("side-toggle").onclick = () =>
+    document.getElementById("side-nav").classList.add("open");
+
+  document.getElementById("side-close").onclick = () =>
+    document.getElementById("side-nav").classList.remove("open");
+});
+</script>
+
+</body>
+
+
+</html>

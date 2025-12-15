@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSSの練習|BASE256</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="../index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="../index.html" id="ahome">ホーム</a></li>
+                <li><a href="math.html" id="amath">数学</a></li>
+                <li><a href="mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+
+        <div class="paragraph" id="tips">
+            <h2><div>HTMLとCSSで遊ぶ</div></h2>
+
+            <p>見た目が同じでも中身が違う文字たち：</p>
+
+            <span style="font-weight:bold;">太字(spanに直接font-weight:boldのstyleを適用)</span><br>
+            <b>太字(bタグ)</b>
+            <div id="boldletter">太字(divにcssファイルからfont-weight:boldを適用)</div>
+            <table><tr><th>太字(tableのtrのth)</th></tr></table>
+            <h4>太字(h4タグ)</h4>
+
+            <p>トグルボタン：</p>
+
+            <div class="toggle_button"><input id="toggle" class="toggle_input" type="checkbox"><label for="toggle" class="toggle_label"></label></div>
+            
+            <p>HTML&CSSでレールガン</p>
+
+            <div>
+                <div style="font-family: serif;line-height: 32px;">
+                    <span style="color: #FF1900;font-size: 2rem;position: relative;bottom: 0px;">と</span>
+
+                    <span style="color: #FF3219;font-size: 1.3rem;position: relative;bottom: 0px;right: 16px;">あ</span>
+
+                    <span style="color: #FF4B32;font-size: 1.3rem;position: relative;bottom: 7px;right: 30px;">る</span>
+
+                    <span style="color: #FF6432;font-size: 2rem;position: relative;bottom: 0px;right: 41px;">科</span>
+
+                    <span style="color: #FF6432;font-size: 1.5rem;position: relative;bottom: 0px;right: 49px;">学</span>
+
+                    <span style="color: #FF7D32;font-size: 1.7rem;position: relative;bottom: -2px;right: 57px;">の</span>
+
+                    <br>
+                    
+                    <span style="color: #FFFFFF;font-size: 2.4rem;position: relative;bottom: -4px;right: -13px;">超</span>
+
+                    <span style="color: #FF3219;font-size: 1.7rem;position: relative;bottom: 4px;right: -7px;">電</span>
+
+                    <span style="color: #FF4B19;font-size: 1.7rem;position: relative;bottom: 4px;right: 1px;">磁</span>
+
+                    <span style="display: inline-block;color: #FF6432;font-size: 2.4rem;position: relative;bottom: -8px;right: 13px;transform: scale(0.8,1.1);;">砲</span>
+
+                    <span style="color: #FF0000;font-size: 0.5rem;position: relative;top: 10px;right: 120px;">レ ー ル ガ ン</span>
+
+                    <div style="position: relative;bottom: 49px;left: 15px;background: #FF0000;width: 45px;height: 45px;z-index: -1;">
+                </div>
+            </div>
+
+            <p>アニメーション：</p>
+
+            <div class="animationBox"></div>
+
+            <p>定番のネタ</p>
+
+            <div class="cssbox"><div>CSS<br>完全に理解した</div></div>
+
+        </div>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>

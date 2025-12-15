@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>関数アート|BASE256</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="../index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="../index.html" id="ahome">ホーム</a></li>
+                <li><a href="math.html" id="amath">数学</a></li>
+                <li><a href="mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <!--作品集-->
+        <div class="paragraph">
+            <h2><div>作品集 <span style="font-size: 0.5em;">(現在の総プロジェクト数:約1100)</span></div></h2>
+            
+            <p>※読み込みに多少時間がかかります。</p>
+
+            <div id="graphs">
+                <div>
+                    <p>・ニュートンフラクタル</p>
+                    <iframe src="https://www.desmos.com/calculator/wun2qaozj7?embed"></iframe>
+                </div>
+
+                <div>
+                    <p>・3次関数のあれ</p>
+                    <iframe src="https://www.desmos.com/calculator/zhkgmq4gvn?embed"></iframe>
+                </div>
+
+                <div>
+                    <p>・フォードの円</p>
+                    <iframe src="https://www.desmos.com/calculator/kdv9grfes6?embed"></iframe>
+                </div>
+
+                <div>
+                    <p>・正七角形と放物線</p>
+                    <iframe src="https://www.desmos.com/calculator/rqi3yxfilt?embed"></iframe>
+                </div>
+
+                <div>
+                    <p>・複素関数</p>
+                    <iframe src="https://www.desmos.com/calculator/delcg6alqa?embed"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="paragraph">
+            <h2><div>Desmosの小技</div></h2>
+            <p>・±の表現</p>
+            <img src="../image/pm.png" width="50%">
+            <p>・√(x²+y²)の省略</p>
+            <img src="../image/circle.png" width="50%">
+            <p>・条件の論理和∨</p>
+            <img src="../image/heiretu.png" width="50%">
+            <p>・条件の論理積∧</p>
+            <img src="../image/seki.png" width="50%">
+            <p>・正方形と回転行列</p>
+            <img src="../image/square.png" width="50%">
+        </div>
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>

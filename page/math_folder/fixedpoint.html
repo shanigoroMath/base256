@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>不動点型高次方程式の解の性質|BASE256</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!--latex読み込み-->
+    <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" }},
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+        },
+        "HTML-CSS": { matchFontHeight: false },
+        displayAlign: "center",
+        displayIndent: "0em"
+        });
+    </script>
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="../../index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="../../index.html" id="ahome">ホーム</a></li>
+                <li><a href="../math.html" id="amath">数学</a></li>
+                <li><a href="../mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="../p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="../desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="../test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        <a class="gomath" href="../math.html"></a>
+        
+        <div class="paragraph">
+            <h2><div>不動点型高次方程式の解の性質</div></h2>
+
+            <div style="border: 1px solid #FFF; padding: 1em; line-height: 1.8em;">定理:<br>$f(x)を2次の多項式とする。$$このとき、4次方程式f(f(x))=xの$$実数解4つをx=x_i(i=1,2,...)とすると、$$点(x_i,f(x_i))はすべて同一円周上にある。$</div>
+            <p>これ面白くないですか？一応補足しておくと、実数解が4つある事が前提です。(まぁ実数解の個数が3以下だと自明なので...)</p>
+
+            <p>証明が美しいです!</p>
+            
+            <p class="proof">～証明～</p>
+
+            <p>当たり前だが、$y=f(x)$とおけば、4次方程式は次の連立2次方程式になる。</p>
+            \[\begin{cases}f(y)=x\quad\cdots\ ①\\y=f(x)\quad\cdots\ ②\end{cases}\]
+
+            <p>ここで、元の方程式の解$x_i$について、$\begin{cases}x=x_i\\y=f(x_i)\end{cases}$は上の連立方程式の解になっている。</p>
+
+            <p>よってこの解は①+②で得られる方程式も満たしている。(束の考え方)</p>
+
+            \[①+②\ \cdots\quad f(x)+f(y)-x-y=0\]
+
+            <p>$f$が2次の多項式であったことを思い出すと、上の方程式は円の方程式だと分かる。</p>
+
+            <p>この円の方程式は解によらず、$f$のみで定まるので、すべての解はこの円周上に存在する。</p>
+
+            <p class="proof">～証明終わり～</p>
+        </div>
+
+        <p>一瞬で示せましたね。ところで、もとの方程式の形を見ていると$f(f(f(x)))=x$の解だったらどうなるのか気になりますね。やってみましょう。</p>
+
+        <div class="paragraph">
+            <h2><div>拡張してみる</div></h2>
+            
+            <p>とりあえず同様に$y=f(x)$とおくと、</p>
+            \[\begin{cases}f(f(y))=x\\y=f(x)\end{cases}\]
+            
+            <p>これを足しても何も嬉しくないので、対称性が欲しいです。</p>
+            <p>そこで$z=f(y)$とおいてみましょう。すると...</p>
+            \[\begin{cases}f(z)=x\quad\cdots\ ①\\y=f(x)\quad\cdots\ ②\\z=f(y)\quad\cdots\ ③\end{cases}\]
+            \[①+②+③ \ \cdots\quad f(x)+f(y)+f(x)-x-y-z=0\]
+
+            <p>これは球の方程式ですね。よって$(x_i,f(x_i),f(f(x_i)))$が座標空間上で同一球面上にあります。</p>
+            <p>一般化すると次のようになりそうです。</p>
+
+            <div style="border: 1px solid #FFF; padding: 1em; line-height: 1.8em;">定理:<br>$f(x)を2次の多項式とする。$$このとき、nを正整数として2^n次方程式f^n(x)=xの$$実数解をx=x_i(i=1,2,...)とすると、$$点(x_i,f(x_i),f(f(x_i)),\cdots, f^n(x_i))はR^n上すべて同一の超球面上にある。$</div>
+
+            <p>4次元以上について詳しく言及することは控えておきますが、上の証明で使う文字を増やしていけばイメージできるような気がします。</p>
+        </div>
+
+        <div class="paragraph">
+            <h2><div>宣伝</div></h2>
+            
+            <p>ポロロッカにこれに関する問題投稿があります。この記事を最後まで読んでくれた方は解いてくれると嬉しいです。</p>
+
+            <a href="https://pororocca.com/problem/2474/">https://pororocca.com/problem/2474/</a>
+            <br>
+            <img src="../../image/sakumonfudou.png" width=50%>
+           
+        </div>
+
+        <p style="border-top: 1px solid #FFF;font-size: 0.8em;">日本語が下手なので、説明がうまく伝わっていないかもです...「高校数学 束」とかで検索すればもっといい説明が見つかると思います</p>
+
+        <a class="gomath" href="../math.html"></a>
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>

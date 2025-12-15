@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>数学|BASE256</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!--latex読み込み-->
+    <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" }},
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+        },
+        "HTML-CSS": { matchFontHeight: false },
+        displayAlign: "center",
+        displayIndent: "0em"
+        });
+    </script>
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="../index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="../index.html" id="ahome">ホーム</a></li>
+                <li><a href="math.html" id="amath">数学</a></li>
+                <li><a href="mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+
+        <!--ピックアップ作問-->
+        <div class="paragraph">
+            <h2><div>ピックアップ問題</div></h2>
+
+            <p>ポロロッカに投稿した問題から1題どうぞ。</p>
+
+            <div style="border: 1px solid #FFF;">
+                \[
+                \sum_{k=1}^{33333^2+200\cdot33333}\sqrt{\frac{2k+19999-2\sqrt{k^2+19999k+99990000}}{k^2+19999k+99990000}}\quadの値を求めよ。
+                \]
+            </div>
+
+            <p><a href="https://pororocca.com/problem/1472/">ここ</a>から解答を送れます(ポロロッカへのリンク)</p>
+
+        </div>
+
+        <!--記事-->
+        <div class="paragraph articles">
+            <h2><div>記事</div></h2>
+
+            <p><a href="math_folder/kakeya.html">掛谷の定理の証明</a></p>
+            <p><a href="math_folder/fixedpoint.html">不動点型の方程式に関する美しい性質</a></p>
+            <p><a href="math_folder/identity.html">$(\alpha-\beta)^2=(\alpha+\beta)^2-4\alpha\beta$を様々な角度から眺める</a></p>
+            
+            <br><br>
+            
+            <span><span style="margin-left: 1em;border: 2px solid #768ac0;background-color: #444;">【新企画！】</span></span>
+
+            <p><a href="#">東大理系数学の解剖【2021-2025】［※PC推奨］</a></p>
+
+        </div>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>

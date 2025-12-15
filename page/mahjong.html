@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>麻雀|BASE256</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="../index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="../index.html" id="ahome">ホーム</a></li>
+                <li><a href="math.html" id="amath">数学</a></li>
+                <li><a href="mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+
+        <!--私の対局記録-->
+        <div class="paragraph">
+            <h2><div>私の牌譜</div></h2>
+
+            <div id="mahjong">
+                <div>
+                    <p>・大三元</p>
+                    <div>初めての役満です</div>
+                    <img src="../image/daisangen.png" alt="大三元">
+                </div>
+                
+                <div>
+                    <p>・初めての数え役満</p>
+                    <div>3麻は染め手が強い</div>
+                    <img src="../image/kazoe1.png" alt="数え役満">
+                </div>
+
+                <div>
+                    <p>・地和</p>
+                    <div>ビギナーズラックって怖いですね</div>
+                    <img src="../image/tiho.png" alt="地和">
+                </div>
+
+                <div>
+                    <p>・四暗刻単騎</p>
+                    <div>なぜか四暗刻は和了れたことがありません</div>
+                    <img src="../image/suttan.png" alt="四暗刻単騎">
+                </div>
+
+                <div>
+                    <p>・国士無双</p>
+                    <div>定番の役満</div>
+                    <img src="../image/kokusi.png" alt="国士無双">
+                </div>
+
+                <div>
+                    <p>・オーバーキル数え役満</p>
+                    <div>【定期】要らない裏は乗る</div>
+                    <img src="../image/kazoe2.png" alt="数え役満">
+                </div>
+
+                <div>
+                    <p>・国士無双13面待ち</p>
+                    <div>競技数学er麻雀大会で出した唯一の2倍役満</div>
+                    <img src="../image/kokusi13.png" alt="国士無双13面待ち">
+                </div>
+
+                <div>
+                    <p>・4麻数え役満</p>
+                    <div>4麻の役満はこれのみ</div>
+                    <img src="../image/kazoe3.png" alt="国士無双13面待ち">
+                </div>
+
+                <div>
+                    <p>・裏6</p>
+                    <div>立直により満貫が3倍満になる瞬間</div>
+                    <img src="../image/uraroku.png" alt="国士無双13面待ち">
+                </div>
+
+            </div>
+        </div>
+
+        <!--配牌操作-->
+        <div class="paragraph">
+            <h2><div>配牌操作は存在しないのか？</div></h2>
+
+            <p>公式声明を見てみよう</p>
+            <div id="haipairule">
+                <img src="../image/haipai1.png">
+                <img src="../image/haipai2.png">
+                <img src="../image/haipai3.png">
+                <img src="../image/haipai4.png">
+            </div>
+
+            <p>ちゃんとランダム性は保証されていました。統計的にも正しいらしいです。（某氏の向聴数統計による）</p>
+        </div>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>

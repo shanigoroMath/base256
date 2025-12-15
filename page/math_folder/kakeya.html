@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>掛谷の定理の証明|BASE256</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <!--latex読み込み-->
+    <script type="text/javascript"
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" }},
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+        },
+        "HTML-CSS": { matchFontHeight: false },
+        displayAlign: "center",
+        displayIndent: "0em"
+        });
+    </script>
+</head>
+
+
+<body id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ-->
+        <div class="logo">
+            <a href="../../index.html">
+                <span id="logo1">B</span>
+                <span id="logo2">A</span>
+                <span id="logo3">S</span>
+                <span id="logo4">E</span>
+                <span id="logo5">2</span>
+                <span id="logo6">5</span>
+                <span id="logo7">6</span>
+            </a>
+        </div>
+        
+
+        <!--ナビ-->
+        <nav>
+            <ul>
+                <li><a href="../../index.html" id="ahome">ホーム</a></li>
+                <li><a href="../math.html" id="amath">数学</a></li>
+                <li><a href="../mahjong.html" id="amahjong">麻雀</a></li>
+                <li><a href="../p5js.html" id="ap5">p5.js</a></li>
+                <li><a href="../desmos.html" id="afunc">関数アート</a></li>
+                <li><a href="../test.html" id="acss">CSSの練習</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gomath" href="../math.html"></a>
+        <div class="paragraph">
+            <h2><div>掛谷の定理</div></h2>
+            <div style="border: 1px solid #FFF;">
+                \[方程式\ ax^3+bx^2+cx+d=0について、\]
+                \[0&lt;a&lt;b&lt;c&lt;d \ であるならば、\]
+                \[全ての複素解について|x|>1である\]
+            </div>
+            <p>証明は対偶法を用いる。</p>
+            <p>すなわち$d>c>b>a>0$のもとで、$|x|\leqq1$ならば方程式の左辺が$0$にならないことを示す。左辺を$F(x)$とおくと、</p>
+
+            <div style="border-bottom: 1px solid #FFF;">
+                \[\begin{align}
+                    (x-1)F(x)=&ax^4+(b-a)x^3+(c-b)x^2+(d-c)x-d\notag\\
+                    -)\hspace{6em} 0=&a\quad+(b-a)\quad+(c-b)\quad+(d-c)\;\;-d\notag
+                \end{align}\]
+            </div>
+            
+            \[(x-1)F(x)=a(x^4-1)+(b-a)(x^3-1)+(c-b)(x^2-1)+(d-c)(x-1)\]
+
+            <p>$|x|\leqq1$のとき整数$k$に対し$|x^k|\leqq1$なので、$x^k-1$の実部は0以下である。さらに$x=1$が解にならないことから <span style="font-size: 0.6em;">($\because F(1)=a+b+c+d>0$)</span>、$x^k-1$の実部は負であるといえる。</p>
+
+            <p>この事実を上で得た式に適用すると、$a,b,c,d$の大小関係から$(x-1)F(x)$の実部も負である。</p>
+
+            <p>よって$(x-1)F(x)$は$0$になれないので、$F(x)$も$0$になれない。□</p>
+        </div>
+
+        <p style="border-top: 1px solid #FFF;font-size: 0.8em;">
+            方程式の解の評価に使えることがあるかもしれません。
+            私はこういう「解の部分的な情報だけなら一瞬で分かる」定理が大好きです。(c.f.デカルトの符号法則)
+        </p>
+
+        <a class="gomath" href="../math.html"></a>
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+
+
+</body>
+
+
+</html>
