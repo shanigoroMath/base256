@@ -537,7 +537,7 @@ iframe {
 }
 
 .problemtable a:not(:has(img.fi))::after {
-  content: "この記事は現在執筆中です";
+  content: "現在執筆中...";
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -572,27 +572,27 @@ iframe {
 }
 
 .problemtable th{
-    width: 200px;
+    width: 100px;
     text-align: left;
     vertical-align: middle;
 }
 
 .problemtable td{
-    width: 120px;
-    height: 95px;
+    width: 100px;
+    height: 80px;
     padding: 0;
     font-size: 1rem;
     text-align: center;
 }
 
 .problemtable td img{
-    width: 100px;
+    width: 80px;
     transition: 0.2s;
 }
 
 
 .problemtable td img:hover{
-    width: 110px;
+    width: 90px;
     transition: 0.2s;
 }
 
