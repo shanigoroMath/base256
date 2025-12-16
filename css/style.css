@@ -528,7 +528,7 @@ iframe {
 
 
 .problemtable a:not(:has(img.fi)) img {
-  opacity: 0.7;
+  opacity: 0.5;
   /*filter: grayscale(100%);*//*グレースケール化*/
 }
 
@@ -633,7 +633,28 @@ iframe {
   vertical-align: super;
 }
 
+/* img.new を含む a を基準にする */
+.problemtable a:has(img.new) {
+  position: relative;
+  display: inline-block;
+}
 
+/* 新着記事バッジ */
+.problemtable a:has(img.new)::after {
+  content: "新着記事";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: #e53935;
+  color: #fff;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  line-height: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0.8;
+}
 
 
 .gouts::before{
