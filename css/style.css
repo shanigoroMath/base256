@@ -641,7 +641,7 @@ iframe {
 
 /* 新着記事バッジ */
 .problemtable a:has(img.new)::after {
-  content: "新着記事";
+  content: "新着";
   position: absolute;
   top: 4px;
   right: 4px;

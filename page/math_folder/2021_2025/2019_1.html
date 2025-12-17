@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2019年東大理系数学第1問を徹底解剖！|東大理系数学の解剖|BASE256</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+</head>
+
+
+<body data-problem="2019-1"  id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../uts_math.html"></a>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2019-1</div></h2>
+
+            <div class="emphbox">
+              <p>次の定積分を求めよ。</p>
+              <p>$\displaystyle \int_0^1 \left(x^2+\frac{x}{\sqrt{1+x^2}}\right)\left(1+\frac{x}{(1+x^2)\sqrt{1+x^2}}\right)dx$</p>
+            </div>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>方針、略解</div></h2>
+
+            <p>中身を展開して積分しましょう。多項式の積分,微分形接触,tan置換などを適宜利用します。
+                <div class="toggle-box">
+                    <input type="checkbox" id="2019-1">
+                    <label for="2019-1"
+                    class="toggle-label">▶ 答え</label>
+                    <div class="toggle-content">   
+                        $$-\frac{35}{12}+\frac{5\sqrt2}{2}+\frac{\pi}{8}$$
+                    </div>
+                </div>
+            </p>
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>問題の背景</div></h2>
+
+            <p>まさかの「ただ積分するだけの第一問」として話題になった問題です。特に技巧的な方法を試みる必要性はあまりなく、本当に計算問題です。とはいえ、そもそも東大の積分（体積ではなく、ただ積分計算をする問題）は、そのほとんどは工夫はいらず、淡々と複雑な計算をさせるだけのものばかりです。むしろ数学的意味を考えるのが無駄なものさえあります。(2021-3,2014-3)。なので、特段深く考えずに計算した者勝ちの問題だったのでしょう。</p>
+
+            <p>しかしこの問題、積分するだけなのだとしたら、なぜ因数分解された形で、しかも左の項が中途半端にまとめられた状態で出題したのでしょうか？</p><p>ということで、ここからはこの問題ができるまでの経緯の予想を話します。【あくまで予想なので、真相は作問者のみぞ知るということに注意】</p>
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>"真の"(？)問題背景</div></h2>
+
+            <p>突然ですが、こんな問題を紹介しましょう。</p>
+
+            <div class="emphbox">放物線$C:y=\frac12x^2(|x|\leqq1)$からの最短距離が1である点$P$の軌跡を求めよ。<br>(ただし、$P$は$y < \frac12x^2$の範囲にあるとする。)</div>
+
+            <p>下のように、法線上に点$P$があるイメージさえつかめれば、あとはベクトル的に処理できます。</p>
+
+            <img src="figure/スクリーンショット 2025-12-17 195458.png" width="200px">
+            <p>(↑今回は距離$r=1$,傾き$m=t$ ($t$は接点の$x$座標) )</p>
+
+            <p>$r,m,t$を上記のように設定すると、$$\overrightarrow{OP} = \begin{pmatrix}t\\ \frac12t^2\end{pmatrix} + \frac{r}{\sqrt{m^2+1}}\begin{pmatrix}m\\-1\end{pmatrix} = \begin{pmatrix}  t+\frac{t}{\sqrt{t^2+1}} \\ \frac12t^2-\frac{1}{\sqrt{t^2+1}}\end{pmatrix} $$</p>
+
+            <p>よって、$P$は上記のように媒介変数表示された曲線上を動きます。(ただし$|t|\leqq1$)</p>
+
+            <p>では、ここでこんな質問をしてみましょう。</p>
+
+            <div class="emphbox" style="background-color: rgba(103, 0, 0, 0.685);">$P$から$x$軸に垂線を下ろしたとき、垂線が通過する領域の面積$S$はいくらか？</div>
+
+            <p>$P$は$x$軸よりも下を動きますから、(∵$y$座標が常に負)<br>$\overrightarrow{OP} = \begin{pmatrix}x(t)\\y(t)\end{pmatrix}$　とおくと、計算すべき面積は、$\displaystyle{S=-\int_{x(-1)}^{x(1)}ydx}$になります。</p>
+
+            <p>置換積分を使って変形してみましょう。</p>
+
+            <p>$$\begin{align}
+              S&=-2\int_0^{x(1)}ydx\qquad(\because 対称性)\\
+              &=-2\int_0^1y(t)\frac{dx}{dt}dt\qquad(積分変数をxからtへ変更)\\
+              &=-\int_0^1\left(t^2-\frac{2}{\sqrt{1+t^2}}\right)\left(1+\frac{1}{(1+t^2)\sqrt{1+t^2}}\right)dx\\
+              &=\cdots(以下省略)
+              \end{align}$$</p>
+
+            <p>すると、本問とかなり類似した式を得ます。積分変数を同じにして比較してみましょう。</p>
+
+            <div class="emphbox">本問：$$ \int_0^1 \left(x^2+\frac{x}{\sqrt{1+x^2}}\right)\left(1+\frac{x}{(1+x^2)\sqrt{1+x^2}}\right)dx$$</div><br>
+
+            <div class="emphbox" style="background-color: rgba(103, 0, 0, 0.685);">$S$の計算式(符号除く):$$\int_0^1\left(x^2{\color{lime}-}\frac{\color{lime}2}{\sqrt{1+x^2}}\right)\left(1+\frac{\color{lime}1}{(1+x^2)\sqrt{1+x^2}}\right)dx$$</div>
+
+            <p>ここからは完全に予想になってしまうのですが、次のように作問されたのかなと思います。</p><br>
+
+            <p>(￣д￣)　ボス問級の求積問題を作ろう！<br>↓<br>(/・ω・)/　放物線との距離を考える問題ができた！「管状近傍」という概念も背景におけるし、それなりに東大らしい良問になりそう<br>↓<br>(; ･`д･´)　あれ？ほかの問題で後半4,5,6問が埋まってしまった...<br>↓<br>(。-`ω-)　1番級のものに改題するために、計算の部分だけ出そうかな<br>↓<br>(；一_一)　無駄な分数や符号は消して、あとは知識ゲーになってしまう$\int\frac{1}{\sqrt{1+x^2}}dx$も、普通のtan置換に変えておくか...<br>↓<br>そして受験生のもとに届く</p><br>
+
+            <p>もし本当にこんなエピソードがあったのならば、数年後に「本当の」問題として出題される可能性もある...？とかいう妄想をしています。</p>
+
+        
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>類題紹介</div></h2>
+
+            <p>「曲線との距離が一定になる」系の問題を置いておきます。ちなみに3次元の場合にはその内部を「管状近傍」と呼ぶことがあるそうです。</p>
+
+
+
+
+
+            <div class="emphbox">$a>0$，$f(x)=\sqrt{2(x+1)}$ とする。座標平面において，曲線 $C:y=f(x)$ 上の点 $P\left(\frac{a^2}{2}-1,\ a\right)$ を通る $C$ の法線を $\ell$ とする。<br>
+<br>
+また，点 $Q(s,\ t)$ は法線 $\ell$ 上にあり，$PQ=1$ かつ $t < a$ を満たすとする。<br>
+<br>
+(1)　導関数 $f'(x)$ を求めよ。また，法線 $\ell$ の方程式を求めよ。<br>
+<br>
+(2)　$s$ および $t$ を $a$ を用いて表せ。また，極限 $\displaystyle\lim_{a\to+0}s$ を求めよ。<br>
+<br>
+(3)　$n$ を $0$ 以上の整数とする。$a\to+0$ のとき，$\frac{t}{a^n}$ が収束するような $n$ の値をすべて求めよ。また，そのときの極限値をそれぞれ求めよ。<br><br>(筑波大、年度不明)</div><br>
+
+
+
+
+
+
+            <div class="emphbox">$y=\frac{2}{\sqrt{3}}x^2 \ \left(|x|\leqq\frac{3}{4}\right)$,$\quad y=\sqrt{6}x^2 \ \left(|x|\leqq\frac{5}{4\sqrt{3}}\right)$　が座標平面上で表す曲線をそれぞれ$C,D$とする。<br>
+
+さらに、曲線$D$に平行移動、原点に関する回転移動、またはその両方を施して得られる図形を$E$とする。<br>$C$と$E$が少なくとも$1$つの共有点を持つように$E$が動くとき、$E$が通過しうる領域全体の面積を求めよ。<br><br>(自作問題、激ムズ注意)</div>
+
+
+
+
+            
+            <p>ここからは積分をひたすら集めていきます。</p>
+
+          <div class="emphbox">曲線$C:y=\frac{x^3}{\sqrt{1-x^2}}\ (0\leqq x < 1)$と直線$L:y=x$で囲まれた図形の面積$S$を求めよ。$\qquad$（京大模試）</div>
+
+          <div class="emphbox">$$\int_{-1-\sqrt3}^{-1+\sqrt3}(u^2+u+1)\sqrt{2-2u-u^2}du\qquad（{\color{orange}東大2014抜粋}）$$</div>
+
+          <div class="emphbox">$$\int_{-3}^1\left(\frac{x}{x^2+3}-\frac18(x+1)\right)^2dx\qquad（{\color{orange}東大2021抜粋}）$$</div>
+
+          <div class="emphbox">$$\int_0^{\pi}\frac{\cos x}{(a-\cos x)^2}dx\qquad(ただしaは1より大きい定数)\qquad(出典不明)$$</div>
+
+        </div>
+
+        <a class="gouts" href="../uts_math.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        <!--上部に戻る-->
+        <div class="gotop">
+            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
+        </div>
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+  document.getElementById("side-toggle").onclick = () =>
+    document.getElementById("side-nav").classList.add("open");
+
+  document.getElementById("side-close").onclick = () =>
+    document.getElementById("side-nav").classList.remove("open");
+});
+</script>
+
+</body>
+
+
+</html>
