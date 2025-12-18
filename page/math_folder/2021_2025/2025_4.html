@@ -134,7 +134,14 @@ $x\ge 1$ ならば $\left|\sqrt[3]{f(x)}-x-k\right|\le \dfrac{l}{x}$<br>
             <p>ここからは「2元2次不定方程式」の諸問題です。</p>
 
             <div class="emphbox" >
-                整数$x,y$に関する不定方程式$x^2-y^2=2022$が解をもたないことを示せ。　　（10秒問題）
+                整数$x,y$に関する不定方程式$x^2-y^2=2022$が解をもたないことを示せ。　　（10秒問題）<br><br><div class="toggle-box">
+                <input type="checkbox" id="2025-4-p1">
+                <label for="2025-4-p1"
+                class="toggle-label">▶ ひとこと</label>
+                <div class="toggle-content">   
+                    偶奇性
+                </div>
+            </div>
             </div>
             <br>
 
@@ -144,7 +151,48 @@ $x\ge 1$ ならば $\left|\sqrt[3]{f(x)}-x-k\right|\le \dfrac{l}{x}$<br>
                 $p,q$を3以上の素数とする。<br>
 $\sqrt{N+\sqrt{pq}}$が実数となり、かつ二重根号を外した形にできるような整数$N$の値を$p,q$を用いて全て求めよ。<br>
 ただし、「$\sqrt{X+\sqrt{Y}}$の形の二重根号が外せる場合は、必ず、正の有理数$a,b$(平方因子があってもよい)を用いて$\sqrt{a}+\sqrt{b}$の形で書けるときに限る」ことは示さずに使ってよい。　　（自作問題）
-            </div>
+            <br><br><div class="toggle-box">
+                <input type="checkbox" id="2025-2-p1">
+                <label for="2025-2-p1"
+                class="toggle-label">▶ 解答[私の作問pdfのコピー]</label>
+                <div class="toggle-content">   
+                    対称性より、$p\geqq q$としてよい。有理数$s,t$を用いて$\sqrt{N+\sqrt{pq}}=\sqrt{s}+\sqrt{t}$と書ける。このとき両辺を二乗して、$N+\sqrt{pq}=s+t+\sqrt{4st}$　$s,t$は有理数なので、$pq=4st$.したがって$N=s+t$.解と係数の関係より、2次方程式$x^2-Nx+\frac{pq}{4}=0$が正の有理数解のみを持てばよい。<br>
+                    よって判別式$N^2-pq$が平方数である事が必要(∵ $N^2-pq$は整数)。以下、整数$N,M(M\geqq0)$についての不定方程式$N^2-M^2=pq\Leftrightarrow(N+M)(N-M)=pq$を解く。<br>
+                    $N+M\geqq N-M\geqq0$より、<br>
+$\begin{pmatrix}
+  N+M\\N-M
+\end{pmatrix}
+=
+\begin{pmatrix}
+  pq\\1
+\end{pmatrix}
+,
+\begin{pmatrix}
+  p\\q
+\end{pmatrix}
+\quad\Leftrightarrow\quad
+\begin{pmatrix}
+  N\\M
+\end{pmatrix}
+=
+\begin{pmatrix}
+  \frac{pq+1}{2}\\\frac{pq-1}{2}
+\end{pmatrix}
+,
+\begin{pmatrix}
+  \frac{p+q}{2}\\\frac{p-q}{2}
+\end{pmatrix}
+$<br>
+いずれも$N,M$ともに正の整数となっており適する。
+逆にこのとき、<br>
+
+$N=\frac{pq+1}{2}$のときは、$\sqrt{\frac{pq+1}{2}+\sqrt{pq}}=\frac{1}{\sqrt{2}}+\sqrt{\frac{pq}{2}}$<br>
+$N=\frac{p+q}{2}$のときは、$\sqrt{\frac{p+q}{2}+\sqrt{pq}}=\sqrt{\frac{p}{2}}+\sqrt{\frac{q}{2}}$<br>
+
+となり適当。$\therefore \underline{\boldsymbol{N=\frac{pq+1}{2},\frac{p+q}{2}}}$
+
+                </div>
+            </div></div>
             <br>
 
 

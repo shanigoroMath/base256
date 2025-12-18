@@ -307,6 +307,13 @@ iframe {
 .gotop{
     font-family: ryusenkei, sans-serif;
     text-align: center;
+    background-color: #002b28;
+    width: 200px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*権利表示*/
@@ -526,6 +533,9 @@ iframe {
 
 
 
+/* ===============================
+   執筆中マーク
+================================ */
 
 .problemtable a:not(:has(img.fi)) img {
   opacity: 0.5;
@@ -537,7 +547,7 @@ iframe {
 }
 
 .problemtable a:not(:has(img.fi))::after {
-  content: "現在執筆中...";
+  content: "工事中";
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -548,7 +558,7 @@ iframe {
   padding: 4px 6px;
   border-radius: 4px;
   white-space: nowrap;
-  opacity: 0;
+  opacity: 0.5;
   pointer-events: none;
   transition: opacity 0.2s;
 }
@@ -558,12 +568,9 @@ iframe {
 }
 
 
-
-
-
-
-
-
+/* ===============================
+   問題リスト
+================================ */
 
 .problemtable th, .problemtable td{
     border: 2px solid #FFFFFF;
@@ -596,7 +603,11 @@ iframe {
     transition: 0.2s;
 }
 
-/*------------------東大理系数学 ラベル用---------------------*/
+
+/* ===============================
+   問題リストのラベル
+================================ */
+
 .problemtable td {
   position: relative; /* ラベルをセル右下に固定するため */
 }
@@ -614,6 +625,7 @@ iframe {
   pointer-events: none; /* クリックを妨げない */
   box-shadow: 0 1px 2px rgba(0,0,0,0.6);
   background: rgba(0,0,0,0.6); /* デフォルト色（上書き可能） */
+  opacity: 0.7;
 }
 
 /* 色分け（必要ならON/OFFして使ってください） */
@@ -654,6 +666,16 @@ iframe {
   pointer-events: none;
   white-space: nowrap;
   opacity: 0.8;
+  animation: newarticlemotion 1s infinite;
+}
+
+@keyframes newarticlemotion{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
 }
 
 
@@ -664,6 +686,11 @@ iframe {
     border: 2px solid #194340;
     padding: 5px;
 }
+
+
+/* ===============================
+   飛び出す解答
+================================ */
 
 /* チェックボックスは非表示にする */
 .toggle-box input {
@@ -696,9 +723,14 @@ iframe {
 
 /* チェックが入ったら中身を表示 */
 .toggle-box input:checked ~ .toggle-content {
-  max-height: 200px; /* 十分大きい値にしておく */
+  max-height: 700px; /* 十分大きい値にしておく */
   padding: 10px;
 }
+
+
+/* ===============================
+   青box
+================================ */
 
 .emphbox {
     border: 2px solid #FFF;
@@ -712,6 +744,11 @@ iframe {
     max-width: 100%;
     height: auto;
 }
+
+
+/* ===============================
+   赤box
+================================ */
 
 .problist {
     display: grid;
@@ -733,7 +770,7 @@ iframe {
 .problist > .autof {
     max-width: 100%;
     font-size: 0.85em;
-    background: rgba(119, 70, 70, 0.26); /* 見やすくするための例。不要なら外してOK */
+    background: rgba(119, 70, 70, 0.26);
     padding: 10px;
     border-radius: 6px;
 }
