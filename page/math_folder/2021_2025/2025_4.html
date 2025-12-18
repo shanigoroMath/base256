@@ -74,9 +74,9 @@
                 この問いでは，0以上の整数の2乗になる数を平方数と呼ぶ。aを正の整数とし，
 $f_a(x)=x^2+x-a$ とおく。<br><br>
 
-1. $n$を正の整数とする。$f_a(n)$ が平方数ならば，$n\le a$ であることを示せ。<br><br>
+(1) $n$を正の整数とする。$f_a(n)$ が平方数ならば，$n\le a$ であることを示せ。<br><br>
 
-2. $f_a(n)$ が平方数となる正の整数 $n$ の個数を $N_a$ とおく。次の条件 (i)，(ii) が同値であることを示せ。<br><br>
+(2) $f_a(n)$ が平方数となる正の整数 $n$ の個数を $N_a$ とおく。次の条件 (i)，(ii) が同値であることを示せ。<br><br>
 
 ・(i) $N_a=1$ である。<br>
 ・(ii) $4a+1$ は素数である。
@@ -89,7 +89,7 @@ $f_a(x)=x^2+x-a$ とおく。<br><br>
 
             <h2><div>方針、略解</div></h2>
 
-            すみませんが、[問題の背景]で触れるので省略します。
+            [問題の背景]で触れるので省略します...
 
         </div>
         
@@ -252,10 +252,7 @@ $ x_n + y_n\sqrt{3} = (2+\sqrt{3})^n\qquad (n=1,2,3,\dots)$<br>
     <!------------------フッタ------------------>
     <footer>
 
-        <!--上部に戻る-->
-        <div class="gotop">
-            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
-        </div>
+        
 
         <!--権利表示-->
         <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
@@ -317,6 +314,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("side-close").onclick = () =>
     document.getElementById("side-nav").classList.remove("open");
+});
+</script>
+<a href="#top" class="go-top-float">▲</a>
+<script>
+const gotop = document.querySelector('.go-top-float');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    gotop.classList.add('show');
+  } else {
+    gotop.classList.remove('show');
+  }
 });
 </script>
 

@@ -38,7 +38,7 @@ a:link{
 
 a:visited{
     text-decoration: none;
-    color: fuchsia;
+    color: dodgerblue;
 }
 
 a:hover{
@@ -558,7 +558,7 @@ iframe {
   padding: 4px 6px;
   border-radius: 4px;
   white-space: nowrap;
-  opacity: 0.5;
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
 }
@@ -593,13 +593,13 @@ iframe {
 }
 
 .problemtable td img{
-    width: 80px;
+    width: 70px;
     transition: 0.2s;
 }
 
 
 .problemtable td img:hover{
-    width: 90px;
+    width: 80px;
     transition: 0.2s;
 }
 
@@ -655,8 +655,8 @@ iframe {
 .problemtable a:has(img.new)::after {
   content: "新着";
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: -4px;
+  right: -6px;
   background: #e53935;
   color: #fff;
   font-size: 0.7em;
@@ -676,6 +676,29 @@ iframe {
     50%{
         transform: scale(1.1);
     }
+}
+
+/* img.new を含む a を基準にする */
+.problemtable a:has(img.ans) {
+  position: relative;
+  display: inline-block;
+}
+
+/* 解答例ありバッジ */
+.problemtable a:has(img.ans)::before {
+  content: "解答例あり";
+  position: absolute;
+  bottom: -4px;
+  left: -10px;
+  background: #354fe5;
+  color: #fff;
+  font-size: 0.7em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  line-height: 1;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0.8;
 }
 
 
@@ -875,4 +898,40 @@ iframe {
   padding-bottom: 6px;
   border-bottom: 1px solid aquamarine;
   display: none;
+}
+
+
+/* ===============================
+   上に戻る
+================================ */
+
+.go-top-float {
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #002b28;
+  border: 2px solid aquamarine;
+  color: aquamarine;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.go-top-float.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.go-top-float:hover {
+  box-shadow: 0 0 12px aquamarine;
+  transform: translateY(-4px);
 }

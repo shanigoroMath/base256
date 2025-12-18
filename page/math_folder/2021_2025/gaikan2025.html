@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<!------------------情報------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2025年東大理系数学を概観！|東大理系数学の解剖|BASE256</title>
+    <link rel="stylesheet" href="../../../css/style.css">
+    
+    <!--latex読み込み-->
+    
+    <style>
+    mjx-container {
+        line-height: normal !important;
+    }
+    mjx-container[jax="SVG"] {
+        overflow-x: auto;
+    }
+    </style>
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$','$$']]
+        },
+        svg: { fontCache: 'global' }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+</head>
+
+
+<body data-problem="2025概観"  id="top">
+
+
+    <!------------------ヘッダ------------------>
+    <header>
+        
+        <!--ロゴ(消した)-->
+        
+
+        <!--ナビ(消した)-->
+        
+
+    </header>
+        <!-- ===== 右サイドナビ ===== -->
+<button id="side-toggle">☰</button>
+
+<aside id="side-nav">
+  <div id="problem-badge"></div>
+  <button id="side-close">×</button>
+  <nav class="td">
+    <ul id="side-nav-list"></ul>
+  </nav>
+</aside>
+    <!------------------ヘッダ終了-------------->
+
+
+    <!------------------メイン------------------>
+    <main>
+        
+        <a class="gouts" href="../uts_math.html"></a>
+        <div class="paragraph">
+            
+            <h2><div>東大理系数学 2025</div></h2>
+
+            <div class="emphbox">
+                座標平面上の点$A(0,0),B(0,1),C(1,1),D(1,0)$を考える。実数$0< t < 1$に対して、線分$AB,BC,CD$を$t:(1-t)$に内分する点をそれぞれ$P_t,Q_t,R_t$とし、線分$P_tQ_t,Q_tR_t$を$t:(1-t)$に内分する点をそれぞれ$S_t,T_t$とする。さらに、線分$S_tT_t$を$t:(1-t)$に内分する点を$U_t$とする。また、点$A$を$U_0$,点$D$を$U_1$とする。<br><br>
+            
+                (1)点$U_t$の座標を求めよ。<br>
+                (2)$t$が$0\leqq t\leqq 1$の範囲を動くときに点$U_t$が描く曲線と、線分$AD$で囲まれた部分の面積を求めよ。<br>
+                (3)$a$を$0 < a < 1$を満たす実数とする。$t$が$0\leqq t \leqq a$の範囲を動くときに点$U_t$が描く曲線の長さを、$a$の多項式の形で求めよ。
+            </div><br>
+
+            <div class="emphbox">
+                <p>(1) $x>0$ のとき、不等式 $\log x\leqq x-1$ を示せ。</p>
+                <p>(2) 次の極限を求めよ。
+                    $$\lim_{n\rightarrow\infty}n\int_1^2\log\bigg(\frac{1+x^{\frac1n}}{2}\bigg)dx$$
+                </p>
+            </div><br>
+
+            <div class="emphbox">
+                <p>平行四辺形$ABCD$において, $\angle ABC=\frac{\pi}{6}, \ AB=a, \ BC=b, \ a\leqq b$ とする。次の条件を満たす長方形$EFGH$を考え、その面積を$S$とする。</p>
+                <p>　　条件：点$A,B,C,D$はそれぞれ辺$EF,FG,GH,HE$上にある。</p>
+                <p>ただし、辺はその両端の点も含むものとする。</p>
+                <p>(1)$\angle BCG=\theta$とするとき、$S$を$a,b,\theta$を用いて表せ。</p>
+                <p>(2)$S$の取り得る値の最大値を$a,b$を用いて表せ。</p>
+            </div><br>
+
+            <div class="emphbox">
+                この問いでは，0以上の整数の2乗になる数を平方数と呼ぶ。aを正の整数とし，
+$f_a(x)=x^2+x-a$ とおく。<br><br>
+
+(1) $n$を正の整数とする。$f_a(n)$ が平方数ならば，$n\le a$ であることを示せ。<br><br>
+
+(2) $f_a(n)$ が平方数となる正の整数 $n$ の個数を $N_a$ とおく。次の条件 (i)，(ii) が同値であることを示せ。<br><br>
+
+・(i) $N_a=1$ である。<br>
+・(ii) $4a+1$ は素数である。
+
+            </div><br>
+
+            <div class="emphbox">
+                <p>$n$ を $2$ 以上の整数とする。$1$ から $n$ までの数字が書かれた札が各 $1$ 枚ずつ合計 $n$ 枚あり，横一列におかれている。$1$ 以上 $(n-1)$ 以下の整数 $i$ に対して，次の操作 $(T_i)$ を考える。<br>
+<br>
+$(T_i)$：左から $i$ 番目の札の数字が，左から $(i+1)$ 番目の札の数字よりも大きければ，これら $2$ 枚の札の位置を入れかえる。そうでなければ，札の位置をかえない。<br>
+<br>
+最初の状態において札の数字は左から $A_1, A_2, \cdots, A_n$ であったとする。この状態から $(n-1)$ 回の操作 $(T_1),(T_2),\cdots,(T_{n-1})$ を順に行った後，続けて $(n-1)$ 回の操作 $(T_{n-1}),\cdots,(T_2),(T_1)$ を順に行ったところ，札の数字は左から $1,2,\cdots,n$ と小さい順に並んだ。以下の問いに答えよ。<br>
+<br>
+(1)$A_1$ と $A_2$ のうち少なくとも一方は $2$ 以下であることを示せ。<br>
+<br>
+(2)最初の状態としてありうる札の数字の並び方 $A_1, A_2, \cdots, A_n$ の総数を $c_n$ とする。$n$ が $4$ 以上の整数であるとき，$c_n$ を $c_{n-1}$ と $c_{n-2}$ を用いて表せ。<br></p>
+            </div><br>
+
+            <div class="emphbox">
+                <p>複素数平面上の点 $\frac12$ を中心とする半径 $\frac12$ の円の周りから原点を除いた曲線を $C$ とする。<br>
+<br>
+
+(1)曲線 $C$ 上の複素数 $z$ に対し，$\frac{1}{z}$ の実部は $1$ であることを示せ。<br>
+
+<br>
+
+(2)$\alpha,\ \beta$ を曲線 $C$ 上の相異なる複素数とするとき，$\frac{1}{\alpha^2}+\frac{1}{\beta^2}$ がとりうる範囲を複素数平面上に図示せよ。<br>
+
+<br>
+
+(3)$\gamma$ を (2) で求めた範囲に属さない複素数とするとき，$\frac{1}{\gamma}$ の実部がとりうる値の最大値と最小値を求めよ。<br></p>
+            </div>
+
+            
+
+        </div>
+
+        <div class="paragraph">
+
+            <h2><div>分析</div></h2>
+            <p>・新課程「情報I」の共テ科目追加に伴い、ベジェ曲線やバブルソートなど、情報デザインを背景にした問題が散見された。</p>
+
+            <p>・大問5がずば抜けて難度が高い。2017-2以降確率漸化式/組合せ漸化式は昨年まで出題されておらず、復活の2年目であったが、悪魔的難化を遂げることとなった。</p>
+
+            <p>・例年大問6は(特に直近の3年間)、捨て問と呼ばれるほどの難問が置かれ、大数評価も毎年Dとなっていた。しかし今年の大問6の点は取りやすく、大問5と明らかに難易度の逆転が発生していたということで、得点率を下げる原因の一つとなった。</p>
+        </div>
+
+        <a class="gouts" href="../uts_math.html"></a>
+
+    </main>
+    <!------------------メイン終了-------------->
+
+
+    <!------------------フッタ------------------>
+    <footer>
+
+        
+
+        <!--権利表示-->
+        <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+    </footer>
+    <!------------------フッタ終了-------------->
+<script>
+const badge = document.getElementById("problem-badge");
+const problem = document.body.dataset.problem;
+
+if (problem) {
+  badge.textContent = problem;
+  badge.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const navList = document.getElementById("side-nav-list");
+  const headers = document.querySelectorAll("main h2");
+
+  // h2 から目次生成
+  headers.forEach((h, i) => {
+    const id = "section-" + i;
+    h.id = id;
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + id;
+    a.textContent = h.innerText.replace(/^>\s*/, "");
+    li.appendChild(a);
+    navList.appendChild(li);
+  });
+
+  // 現在位置ハイライト
+  const links = navList.querySelectorAll("a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    headers.forEach(h => {
+      if (h.getBoundingClientRect().top < 120) {
+        current = h.id;
+      }
+    });
+
+    links.forEach(a => {
+      a.classList.toggle(
+        "active",
+        a.getAttribute("href") === "#" + current
+      );
+    });
+  });
+
+  // 開閉処理
+  document.getElementById("side-toggle").onclick = () =>
+    document.getElementById("side-nav").classList.add("open");
+
+  document.getElementById("side-close").onclick = () =>
+    document.getElementById("side-nav").classList.remove("open");
+});
+</script>
+<a href="#top" class="go-top-float">▲</a>
+<script>
+const gotop = document.querySelector('.go-top-float');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    gotop.classList.add('show');
+  } else {
+    gotop.classList.remove('show');
+  }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>

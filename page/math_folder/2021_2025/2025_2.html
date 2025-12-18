@@ -297,10 +297,7 @@
     <!------------------フッタ------------------>
     <footer>
 
-        <!--上部に戻る-->
-        <div class="gotop">
-            <a href="#top">&gt;&gt;Go page top&lt;&lt;</a>
-        </div>
+        
 
         <!--権利表示-->
         <p class="copyright">&copy; <span id="year"></span> Shanigoro</p>
@@ -362,6 +359,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("side-close").onclick = () =>
     document.getElementById("side-nav").classList.remove("open");
+});
+</script>
+<a href="#top" class="go-top-float">▲</a>
+<script>
+const gotop = document.querySelector('.go-top-float');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    gotop.classList.add('show');
+  } else {
+    gotop.classList.remove('show');
+  }
 });
 </script>
 
